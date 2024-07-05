@@ -1,0 +1,26 @@
+<h1>Posts</h1>
+<form #postform="ngForm" (ngSubmit)="submit(postform.value)">
+    <input type="text" name="title" placeholder="title" ngModel/><br/>
+    <input type="text" name="body" placeholder="body" ngModel/><br/>
+    <input type="text" name="userId" placeholder="userId" ngModel/><br/>
+    <input type="submit" [disabled]="postform.invalid"/>
+</form>
+<!-- <table>
+    <tr *ngFor="let p of posts">
+        <td>{{p.id}}</td>
+        <td><a routerLink="{{p.id}}">{{p.title}}</a></td>
+    </tr>
+</table> -->
+
+<mat-card appearance="outlined" *ngFor="let p of posts">
+    <mat-card-content><a routerLink="{{p.id}}">{{p.title}}</a></mat-card-content>
+    <mat-card-content>{{p.body}}</mat-card-content>
+</mat-card>
+  
+
+@if(posts.length==0){
+    <div>
+    Please Wait...
+    <img src="https://i.pinimg.com/originals/c7/e1/b7/c7e1b7b5753737039e1bdbda578132b8.gif" height="200" width="300"/>
+    </div>
+}

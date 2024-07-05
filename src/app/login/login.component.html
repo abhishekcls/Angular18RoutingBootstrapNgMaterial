@@ -1,0 +1,7 @@
+<h1>Login&nbsp;<button (click)="logout()" class="btn btn-danger">logout</button></h1>
+
+<form #loginform="ngForm" (ngSubmit)="login(loginform.value)">
+<input type="text" name="uname" placeholder="UserName" required ngModel/><br/>
+<input type="password" name="pass" placeholder="Password" required ngModel/><br/>
+<input type="submit" [disabled]="loginform.invalid" class="btn btn-primary"/>
+</form>

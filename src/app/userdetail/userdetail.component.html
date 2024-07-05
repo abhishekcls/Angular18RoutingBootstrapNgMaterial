@@ -1,0 +1,14 @@
+<h2>UserDetail of {{id}}</h2>
+<ul *ngIf="user; else load">
+    <li>{{user.name}}</li>
+    <li>{{user.username}}</li>
+    <li>{{user.email}}</li>
+    <li>{{user.address.city}}</li>
+</ul>
+
+<ng-template #load>
+    Please Wait...
+    <img src="https://i.pinimg.com/originals/c7/e1/b7/c7e1b7b5753737039e1bdbda578132b8.gif" height="200" width="300"/>
+</ng-template>
+
+<a routerLink="/user">back</a>
